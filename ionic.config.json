@@ -1,7 +1,4 @@
 {
   "name": "ionic",
-  "integrations": {
-    "capacitor": {}
-  },
   "type": "vue"
 }
