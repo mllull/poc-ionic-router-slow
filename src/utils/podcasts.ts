@@ -21,17 +21,19 @@ export const fetchPodcast = async (url: string) => {
           image_url: meta.image.url,
         });
 
-        podcast_data.episodes.forEach((episode) => {
-          Audio.save({
-            title: episode.title,
-            description: episode.description,
-            podcast_id: podcast.id,
-            pubDate: episode.pubDate,
-            audio_url: episode.enclosure.url,
-            duration: episode.duration,
-            image_url: episode.image?.url,
+        for (let index = 0; index < 4; index++) {
+          podcast_data.episodes.forEach((episode) => {
+            Audio.save({
+              title: episode.title,
+              description: episode.description,
+              podcast_id: podcast.id,
+              pubDate: episode.pubDate,
+              audio_url: episode.enclosure.url,
+              duration: episode.duration,
+              image_url: episode.image?.url,
+            });
           });
-        });
+        }
       }
     });
 };
